@@ -25,7 +25,7 @@ namespace NumeralSystemsConverter
 
             foreach (char i in value)
             {
-                int symbol = (i <= '9' && i >= '0') ? Convert.ToInt32(i.ToString()) : Convert.ToInt32((i - LAMBDA_CHAR_SYMBOL).ToString());
+                int symbol = Char.IsDigit(i) ? Convert.ToInt32(i.ToString()) : Convert.ToInt32((i - LAMBDA_CHAR_SYMBOL).ToString());
                 dexValue += symbol * (int)Math.Pow(numeralSystemFrom, degree);
                 degree--;
             }
